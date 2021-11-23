@@ -6,46 +6,50 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-const Stack = createStackNavigator()
-const Tab = createBottomTabNavigator()
 
-function MyTabs() {
+const Stack = createStackNavigator()
+const AuthStack = createStackNavigator()
+const AppStack = createStackNavigator()
+
+
+function AuthStackNavigator() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ focused, color, size }) => {
-            return <Icon name={'ios-home'} size={25} color={color} />
-          }
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ focused, color, size }) => {
-            return <Icon name={'ios-settings'} size={25} color={color} />
-          }
-        }}
-      />
-    </Tab.Navigator>
-  )
+    <AuthStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName="Profile">
+      <AuthStack.Screen name="Profile" component={Profile} />
+    </AuthStack.Navigator>
+  );
 }
 
+
+function AppStackNavigator() {
+  return (
+    <AppStack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+      initialRouteName="Home">
+      <AppStack.Screen name="Home" component={Home} />
+    </AppStack.Navigator>
+  )
+}
 const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen
-          name="HomeBase"
+      <Stack.Screen
+          name="AuthStackNavigator"
           options={{ headerShown: false }}
-          component={MyTabs}
+          component={AuthStackNavigator}
         />
-        {/* add your another screen here using -> Stack.Screen */}
+        <Stack.Screen
+          name="AppStackNavigator"
+          options={{ headerShown: false }}
+          component={AppStackNavigator}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

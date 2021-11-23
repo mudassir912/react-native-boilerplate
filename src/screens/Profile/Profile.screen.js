@@ -20,7 +20,11 @@ const Home = ({ navigation }) => {
           <Icon name={'ios-settings'} size={100} color={'green'} />
           <View>
             <TouchableOpacity
-              onPress={() => Alert.alert('this is Profile Screen')}
+                onPress={() => {
+                  navigation.navigate('AppStackNavigator', {
+                    screen: 'Home',
+                  })
+                }}
               style={styles.buttonStyle}>
               <Text style={styles.text}>
                 this is{' '}
