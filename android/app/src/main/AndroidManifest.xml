@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.appstirr">
+  package="com.appstirr.howmuch">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

@@ -1,4 +1,4 @@
-package com.appstirr;
+package com.appstirr.howmuch;
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
@@ -17,6 +17,6 @@ public class MainActivity extends ReactActivity {
   
   @Override
   protected String getMainComponentName() {
-    return "WineApp";
+    return "HowMuch";
   }
 }

@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface WineAppTests : XCTestCase
+@interface HowMuchTests : XCTestCase
 
 @end
 
-@implementation WineAppTests
+@implementation HowMuchTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
