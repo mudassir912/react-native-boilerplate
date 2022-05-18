@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.appstirr.howmuch">
+  package="com.appstirr.prjectbreeze">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
